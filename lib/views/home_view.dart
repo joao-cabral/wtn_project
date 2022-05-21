@@ -1,0 +1,146 @@
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:wtn_project/components/dropdown_component.dart';
+import 'package:wtn_project/controllers/terms_controller.dart';
+import 'package:wtn_project/model/arguments_routes_model.dart';
+import 'package:wtn_project/routes/routes.dart';
+
+class HomeView extends StatefulWidget {
+  const HomeView({Key? key}) : super(key: key);
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  bool isLoading = true;
+  final random = Random();
+  String valueDropdown = 'brazil';
+
+  @override
+  void initState() {
+    Provider.of<TermsController>(context, listen: false);
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('What\'s the news?'),
+      ),
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(14.0),
+                      child: SizedBox(
+                        height: 30,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const DropdownComponent(),
+                            IconButton(
+                              icon: const Icon(Icons.settings),
+                              onPressed: () {},
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Text(
+                        'Top pesquisas',
+                        style: GoogleFonts.roboto(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                Consumer<TermsController>(
+                  builder: (context, controller, _) {
+                    final terms = controller.termsCountry;
+
+                    if (terms.isEmpty) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }
+
+                    return Column(
+                      children: [
+                        ListView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: controller.termsCountry.length,
+                          itemBuilder: (context, index) {
+                            final colorAvatar = Colors.primaries[
+                                random.nextInt(Colors.primaries.length)];
+                            return Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 8.0, right: 8.0),
+                              child: Card(
+                                child: ListTile(
+                                  leading: ClipOval(
+                                    child: Container(
+                                      height: 40,
+                                      width: 40,
+                                      color: colorAvatar,
+                                      child: Center(
+                                        child: Text(
+                                          (index + 1).toString(),
+                                          style: GoogleFonts.roboto(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  title: Text(controller.termsCountry[index]),
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                      context,
+                                      Routes.details,
+                                      arguments: ArgumentsRoutesModel(
+                                        term: controller.termsCountry[index],
+                                        color: colorAvatar,
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
