@@ -1,12 +1,13 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:wtn_project/components/dropdown_component.dart';
 import 'package:wtn_project/controllers/terms_controller.dart';
 import 'package:wtn_project/model/arguments_routes_model.dart';
 import 'package:wtn_project/routes/routes.dart';
+import 'package:wtn_project/util/ad_helper.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -17,13 +18,55 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   bool isLoading = true;
+  bool? isLoadingAd;
   final random = Random();
   String valueDropdown = 'brazil';
+
+  BannerAd? ad;
 
   @override
   void initState() {
     Provider.of<TermsController>(context, listen: false);
+
+    ad = BannerAd(
+      size: AdSize.banner,
+      adUnitId: AdHelper.bannerAdUnitId,
+      listener: BannerAdListener(onAdLoaded: (_) {
+        setState(() {
+          isLoadingAd = true;
+        });
+      }, onAdFailedToLoad: (_, error) {
+        print("Ad failed to load: $error");
+      }),
+      request: const AdRequest(),
+    );
+
+    ad?.load();
+
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    ad?.dispose();
+    super.dispose();
+  }
+
+  Widget checkForAd() {
+    if (isLoading) {
+      return Container(
+        child: AdWidget(
+          ad: ad!,
+        ),
+        width: ad!.size.width.toDouble(),
+        height: ad!.size.height.toDouble(),
+        alignment: Alignment.center,
+      );
+    } else {
+      return const Center(
+        child: CircularProgressIndicator(),
+      );
+    }
   }
 
   @override
@@ -132,6 +175,7 @@ class _HomeViewState extends State<HomeView> {
                             );
                           },
                         ),
+                        checkForAd(),
                       ],
                     );
                   },
