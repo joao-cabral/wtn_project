@@ -78,12 +78,7 @@ class _HomeViewState extends State<HomeView> {
       appBar: AppBar(
         title: const Text('What\'s the news?'),
         actions: const [
-          // IconButton(
-          //   icon: const Icon(Icons.settings),
-          //   onPressed: () {
           MenuHomePageComponent(),
-          // },
-          // ),
         ],
       ),
       body: CustomScrollView(
@@ -101,7 +96,7 @@ class _HomeViewState extends State<HomeView> {
                       child: SizedBox(
                         height: 30,
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: const [
                             DropdownComponent(),
                           ],
