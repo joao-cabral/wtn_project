@@ -2,7 +2,8 @@ import 'dart:async';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
-import 'package:wtn_project/routes/routes.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:wtn_project/views/home_view.dart';
 
 class MyCustomWidget extends StatefulWidget {
   const MyCustomWidget({Key? key}) : super(key: key);
@@ -73,7 +74,12 @@ class _SecondClassState extends State<SecondClass>
     )..addStatusListener(
         (status) {
           if (status == AnimationStatus.completed) {
-            Navigator.of(context).pushNamed(Routes.home);
+            Navigator.of(context).pushReplacement(
+              PageTransition(
+                type: PageTransitionType.bottomToTop,
+                child: const HomeView(),
+              ),
+            );
             Timer(
               const Duration(milliseconds: 300),
               () {
