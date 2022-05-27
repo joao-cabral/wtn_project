@@ -39,6 +39,7 @@ dependencies:
   url_launcher:
   provider:
   google_mobile_ads: ^1.2.0
+  flutter_staggered_animations: ^1.0.0
 
 dev_dependencies:
   flutter_test:
