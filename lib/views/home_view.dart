@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:wtn_project/components/dropdown_component.dart';
+import 'package:wtn_project/components/menu_home_page_component.dart';
 import 'package:wtn_project/controllers/terms_controller.dart';
 import 'package:wtn_project/model/arguments_routes_model.dart';
 import 'package:wtn_project/routes/routes.dart';
@@ -76,6 +77,14 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('What\'s the news?'),
+        actions: const [
+          // IconButton(
+          //   icon: const Icon(Icons.settings),
+          //   onPressed: () {
+          MenuHomePageComponent(),
+          // },
+          // ),
+        ],
       ),
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(
@@ -92,13 +101,9 @@ class _HomeViewState extends State<HomeView> {
                       child: SizedBox(
                         height: 30,
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const DropdownComponent(),
-                            IconButton(
-                              icon: const Icon(Icons.settings),
-                              onPressed: () {},
-                            ),
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            DropdownComponent(),
                           ],
                         ),
                       ),
