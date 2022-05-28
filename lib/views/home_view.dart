@@ -9,7 +9,6 @@ import 'package:wtn_project/components/menu_home_page_component.dart';
 import 'package:wtn_project/controllers/terms_controller.dart';
 import 'package:wtn_project/model/arguments_routes_model.dart';
 import 'package:wtn_project/routes/routes.dart';
-import 'package:wtn_project/util/ad_helper.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -30,20 +29,20 @@ class _HomeViewState extends State<HomeView> {
   void initState() {
     Provider.of<TermsController>(context, listen: false);
 
-    ad = BannerAd(
-      size: AdSize.banner,
-      adUnitId: AdHelper.bannerAdUnitId,
-      listener: BannerAdListener(onAdLoaded: (_) {
-        setState(() {
-          isLoadingAd = true;
-        });
-      }, onAdFailedToLoad: (_, error) {
-        print("Ad failed to load: $error");
-      }),
-      request: const AdRequest(),
-    );
+    // ad = BannerAd(
+    //   size: AdSize.banner,
+    //   adUnitId: AdHelper.bannerAdUnitId,
+    //   listener: BannerAdListener(onAdLoaded: (_) {
+    //     setState(() {
+    //       isLoadingAd = true;
+    //     });
+    //   }, onAdFailedToLoad: (_, error) {
+    //     print("Ad failed to load: $error");
+    //   }),
+    //   request: const AdRequest(),
+    // );
 
-    ad?.load();
+    // ad?.load();
 
     super.initState();
   }
@@ -138,8 +137,6 @@ class _HomeViewState extends State<HomeView> {
                           child: ListView.builder(
                             shrinkWrap: true,
                             physics: const NeverScrollableScrollPhysics(),
-                            // physics: const BouncingScrollPhysics(
-                            //     parent: AlwaysScrollableScrollPhysics()),
                             itemCount: controller.termsCountry.length,
                             itemBuilder: (context, index) {
                               final colorAvatar = Colors.primaries[
@@ -198,7 +195,7 @@ class _HomeViewState extends State<HomeView> {
                             },
                           ),
                         ),
-                        checkForAd(),
+                        // checkForAd(),
                       ],
                     );
                   },
