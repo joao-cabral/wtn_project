@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 enum _MenuOptions {
   improvements,
-  changeTheme,
+  // changeTheme,
   about,
 }
 
@@ -14,9 +14,9 @@ class MenuHomePageComponent extends StatelessWidget {
     return PopupMenuButton<_MenuOptions>(
       onSelected: (value) async {
         switch (value) {
-          case _MenuOptions.changeTheme:
-            print('changeTheme');
-            break;
+          // case _MenuOptions.changeTheme:
+          //   print('changeTheme');
+          //   break;
           case _MenuOptions.improvements:
             print('ContactUs');
             break;
@@ -26,13 +26,13 @@ class MenuHomePageComponent extends StatelessWidget {
         }
       },
       itemBuilder: (context) => [
-        const PopupMenuItem<_MenuOptions>(
-          value: _MenuOptions.changeTheme,
-          child: Text('Tema'),
-        ),
+        // const PopupMenuItem<_MenuOptions>(
+        //   value: _MenuOptions.changeTheme,
+        //   child: Text('Tema'),
+        // ),
         const PopupMenuItem<_MenuOptions>(
           value: _MenuOptions.improvements,
-          child: Text('Você tem melhorias?'),
+          child: Text('Melhorias?'),
         ),
         const PopupMenuItem<_MenuOptions>(
           value: _MenuOptions.about,
