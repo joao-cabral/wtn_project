@@ -74,16 +74,53 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('What\'s the news?'),
-        actions: const [
-          MenuHomePageComponent(),
-        ],
-      ),
+      // appBar: AppBar(
+      //   title: const Text('What\'s the news?'),
+      //   actions: const [
+      //     MenuHomePageComponent(),
+      //   ],
+      // ),
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(
             parent: AlwaysScrollableScrollPhysics()),
         slivers: <Widget>[
+          SliverAppBar(
+            floating: true,
+            pinned: false,
+            expandedHeight: w * 0.3,
+            flexibleSpace: FlexibleSpaceBar(
+              //TODO: Change to a banner ad
+              //TODO: Change font in title
+              //TODO: Turn dropdown into an icon
+              //TODO: Change color background in appbar
+              title:
+                  Consumer<TermsController>(builder: (context, controller, _) {
+                return Text(controller.valueDropdown!);
+              }),
+              centerTitle: true,
+              titlePadding: const EdgeInsets.only(
+                left: 20,
+                right: 20,
+                top: 20,
+                bottom: 20,
+              ),
+              background: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Colors.blue,
+                      Colors.blue[900]!,
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            actions: const [
+              MenuHomePageComponent(),
+            ],
+          ),
           SliverList(
             delegate: SliverChildListDelegate(
               [
