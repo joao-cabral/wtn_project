@@ -70,7 +70,7 @@ class _SecondClassState extends State<SecondClass>
 
     scaleController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 600),
+      duration: const Duration(milliseconds: 700),
     )..addStatusListener(
         (status) {
           if (status == AnimationStatus.completed) {
@@ -91,7 +91,7 @@ class _SecondClassState extends State<SecondClass>
       );
 
     scaleAnimation =
-        Tween<double>(begin: 0.0, end: 12).animate(scaleController!);
+        Tween<double>(begin: 0.0, end: 14).animate(scaleController!);
 
     Timer(const Duration(seconds: 2), () {
       setState(() {
