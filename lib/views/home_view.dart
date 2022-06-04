@@ -4,8 +4,8 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
-import 'package:wtn_project/components/dropdown_component.dart';
 import 'package:wtn_project/components/menu_home_page_component.dart';
+import 'package:wtn_project/components/custom_dropdown_component.dart';
 import 'package:wtn_project/controllers/terms_controller.dart';
 import 'package:wtn_project/model/arguments_routes_model.dart';
 import 'package:wtn_project/routes/routes.dart';
@@ -74,12 +74,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('What\'s the news?'),
-      //   actions: const [
-      //     MenuHomePageComponent(),
-      //   ],
-      // ),
+      backgroundColor: Colors.green[100],
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(
             parent: AlwaysScrollableScrollPhysics()),
@@ -88,38 +83,39 @@ class _HomeViewState extends State<HomeView> {
             floating: true,
             pinned: false,
             expandedHeight: w * 0.3,
+            backgroundColor: Colors.green[900],
             flexibleSpace: FlexibleSpaceBar(
               //TODO: Change to a banner ad
               //TODO: Change font in title
-              //TODO: Turn dropdown into an icon
-              //TODO: Change color background in appbar
               title:
                   Consumer<TermsController>(builder: (context, controller, _) {
-                return Text(controller.valueDropdown!);
+                return Text(controller.valueDropdown!,
+                    style: GoogleFonts.rozhaOne(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                    ));
               }),
               centerTitle: true,
-              titlePadding: const EdgeInsets.only(
-                left: 20,
-                right: 20,
-                top: 20,
-                bottom: 20,
-              ),
-              background: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                      Colors.blue,
-                      Colors.blue[900]!,
+            ),
+            actions: const [
+              MenuHomePageComponent(),
+            ],
+            bottom: PreferredSize(
+              preferredSize: const Size.fromHeight(0.0),
+              child: Transform.translate(
+                offset: const Offset(0, 20),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 24.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: const [
+                      CustomDropdownComponent(),
                     ],
                   ),
                 ),
               ),
             ),
-            actions: const [
-              MenuHomePageComponent(),
-            ],
           ),
           SliverList(
             delegate: SliverChildListDelegate(
@@ -127,25 +123,16 @@ class _HomeViewState extends State<HomeView> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(14.0),
-                      child: SizedBox(
-                        height: 30,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: const [
-                            DropdownComponent(),
-                          ],
-                        ),
-                      ),
+                    const SizedBox(
+                      height: 30,
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(12.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Text(
                         'Top pesquisas',
-                        style: GoogleFonts.roboto(
+                        style: GoogleFonts.spaceMono(
                           fontSize: 22,
-                          fontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w700,
                           color: Colors.black,
                         ),
                       ),
