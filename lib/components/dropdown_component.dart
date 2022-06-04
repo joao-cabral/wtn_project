@@ -15,206 +15,210 @@ class _DropdownComponentState extends State<DropdownComponent> {
   @override
   Widget build(BuildContext context) {
     return Consumer<TermsController>(builder: (context, controller, _) {
-      return Padding(
-        padding: const EdgeInsets.only(left: 8.0),
+      return Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(25),
+          color: Colors.black,
+        ),
         child: DropdownButtonHideUnderline(
           child: DropdownButton<String>(
-            value: controller.valueDropdown,
+            // value: controller.valueDropdown,
             onChanged: (value) {
               context.read<TermsController>().changeCountry(value!);
             },
-            //TODO: Change value in dropdown
+            iconSize: 60.0,
+            isExpanded: false,
             items: const [
               DropdownMenuItem(
-                value: 'brazil',
+                value: 'Brazil',
                 child: Text('Brazil'),
               ),
               DropdownMenuItem(
-                value: 'united_states',
+                value: 'United States',
                 child: Text('United States'),
               ),
               DropdownMenuItem(
-                value: 'india',
+                value: 'India',
                 child: Text('India'),
               ),
               DropdownMenuItem(
-                value: 'japan',
+                value: 'Japan',
                 child: Text('Japan'),
               ),
               DropdownMenuItem(
-                value: 'singapore',
+                value: 'Singapore',
                 child: Text('Singapore'),
               ),
               DropdownMenuItem(
-                value: 'israel',
+                value: 'Israel',
                 child: Text('Israel'),
               ),
               DropdownMenuItem(
-                value: 'australia',
+                value: 'Australia',
                 child: Text('Australia'),
               ),
               DropdownMenuItem(
-                value: 'hong_kong',
+                value: 'Hong Kong',
                 child: Text('Hong Kong'),
               ),
               DropdownMenuItem(
-                value: 'taiwan',
+                value: 'Taiwan',
                 child: Text('Taiwan'),
               ),
               DropdownMenuItem(
-                value: 'canada',
+                value: 'Canada',
                 child: Text('Canada'),
               ),
               DropdownMenuItem(
-                value: 'germany',
+                value: 'Germany',
                 child: Text('Germany'),
               ),
               DropdownMenuItem(
-                value: 'netherlands',
+                value: 'Netherlands',
                 child: Text('Netherlands'),
               ),
               DropdownMenuItem(
-                value: 'indonesia',
+                value: 'Indonesia',
                 child: Text('Indonesia'),
               ),
               DropdownMenuItem(
-                value: 'south_korea',
+                value: 'South Korea',
                 child: Text('South Korea'),
               ),
               DropdownMenuItem(
-                value: 'turkey',
+                value: 'Turkey',
                 child: Text('Turkey'),
               ),
               DropdownMenuItem(
-                value: 'philippines',
+                value: 'Philippines',
                 child: Text('Philippines'),
               ),
               DropdownMenuItem(
-                value: 'italy',
+                value: 'Italy',
                 child: Text('Italy'),
               ),
               DropdownMenuItem(
-                value: 'vietnam',
+                value: 'Vietnam',
                 child: Text('Vietnam'),
               ),
               DropdownMenuItem(
-                value: 'egypt',
+                value: 'Egypt',
                 child: Text('Egypt'),
               ),
               DropdownMenuItem(
-                value: 'argentina',
+                value: 'Argentina',
                 child: Text('Argentina'),
               ),
               DropdownMenuItem(
-                value: 'poland',
+                value: 'Poland',
                 child: Text('Poland'),
               ),
               DropdownMenuItem(
-                value: 'colombia',
+                value: 'Colombia',
                 child: Text('Colombia'),
               ),
               DropdownMenuItem(
-                value: 'ukraine',
+                value: 'Ukraine',
                 child: Text('Ukraine'),
               ),
               DropdownMenuItem(
-                value: 'saudi_arabia',
+                value: 'Aaudi Arabia',
                 child: Text('Aaudi Arabia'),
               ),
               DropdownMenuItem(
-                value: 'kenya',
+                value: 'Kenya',
                 child: Text('Kenya'),
               ),
               DropdownMenuItem(
-                value: 'chile',
+                value: 'Chile',
                 child: Text('Chile'),
               ),
               DropdownMenuItem(
-                value: 'romania',
+                value: 'Romania',
                 child: Text('Romania'),
               ),
               DropdownMenuItem(
-                value: 'south_africa',
+                value: 'South Africa',
                 child: Text('South Africa'),
               ),
               DropdownMenuItem(
-                value: 'belgium',
+                value: 'Belgium',
                 child: Text('Belgium'),
               ),
               DropdownMenuItem(
-                value: 'sweden',
+                value: 'Sweden',
                 child: Text('Sweden'),
               ),
               DropdownMenuItem(
-                value: 'austria',
+                value: 'Austria',
                 child: Text('Austria'),
               ),
               DropdownMenuItem(
-                value: 'switzerland',
+                value: 'Switzerland',
                 child: Text('Switzerland'),
               ),
               DropdownMenuItem(
-                value: 'greece',
+                value: 'Greece',
                 child: Text('Greece'),
               ),
               DropdownMenuItem(
-                value: 'denmark',
+                value: 'Denmark',
                 child: Text('Denmark'),
               ),
               DropdownMenuItem(
-                value: 'norway',
+                value: 'Norway',
                 child: Text('Norway'),
               ),
               DropdownMenuItem(
-                value: 'nigeria',
+                value: 'Nigeria',
                 child: Text('Nigeria'),
               ),
               DropdownMenuItem(
-                value: 'new_zealand',
+                value: 'New Zealand',
                 child: Text('New Zealand'),
               ),
               DropdownMenuItem(
-                value: 'ireland',
+                value: 'Ireland',
                 child: Text('Ireland'),
               ),
               DropdownMenuItem(
-                value: 'czech_republic',
+                value: 'Czech Republic',
                 child: Text('Czech Republic'),
               ),
               DropdownMenuItem(
-                value: 'portugal',
+                value: 'Portugal',
                 child: Text('Portugal'),
               ),
               DropdownMenuItem(
-                value: 'mexico',
+                value: 'Mexico',
                 child: Text('Mexico'),
               ),
               DropdownMenuItem(
-                value: 'malaysia',
+                value: 'Malaysia',
                 child: Text('Malaysia'),
               ),
               DropdownMenuItem(
-                value: 'hungary',
+                value: 'Hungary',
                 child: Text('Hungary'),
               ),
               DropdownMenuItem(
-                value: 'russia',
+                value: 'Russia',
                 child: Text('Russia'),
               ),
               DropdownMenuItem(
-                value: 'thailand',
+                value: 'Thailand',
                 child: Text('Thailand'),
               ),
               DropdownMenuItem(
-                value: 'france',
+                value: 'France',
                 child: Text('France'),
               ),
               DropdownMenuItem(
-                value: 'united_kingdom',
+                value: 'United Kingdom',
                 child: Text('United Kingdom'),
               ),
               DropdownMenuItem(
-                value: 'finland',
+                value: 'Finland',
                 child: Text('Finland'),
               ),
             ],

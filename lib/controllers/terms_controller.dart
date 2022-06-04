@@ -6,7 +6,7 @@ class TermsController extends ChangeNotifier {
   TermsRepository termsRepository = TermsRepository();
   MostSearchedTerms terms = MostSearchedTerms();
   List<String> termsCountry = [];
-  String? valueDropdown = 'brazil';
+  String? valueDropdown = 'Brazil';
 
   TermsController({required this.termsRepository}) {
     getTerms();
@@ -22,291 +22,291 @@ class TermsController extends ChangeNotifier {
 
   changeCountry(String country) {
     switch (country) {
-      case 'brazil':
+      case 'Brazil':
         {
-          valueDropdown = 'brazil';
+          valueDropdown = 'Brazil';
           termsCountry = terms.brazil!;
         }
         break;
-      case 'united_states':
+      case 'United States':
         {
-          valueDropdown = 'united_states';
+          valueDropdown = 'United States';
           termsCountry = terms.unitedStates!;
         }
         break;
-      case 'india':
+      case 'India':
         {
-          valueDropdown = 'india';
+          valueDropdown = 'India';
           termsCountry = terms.india!;
         }
         break;
-      case 'japan':
+      case 'Japan':
         {
-          valueDropdown = 'japan';
+          valueDropdown = 'Japan';
           termsCountry = terms.japan!;
         }
         break;
-      case 'singapore':
+      case 'Singapore':
         {
-          valueDropdown = 'singapore';
+          valueDropdown = 'Singapore';
           termsCountry = terms.singapore!;
         }
         break;
-      case 'israel':
+      case 'Israel':
         {
-          valueDropdown = 'israel';
+          valueDropdown = 'Israel';
           termsCountry = terms.israel!;
         }
         break;
-      case 'australia':
+      case 'Australia':
         {
-          valueDropdown = 'australia';
+          valueDropdown = 'Australia';
           termsCountry = terms.australia!;
         }
         break;
-      case 'hong_kong':
+      case 'Hong Kong':
         {
-          valueDropdown = 'hong_kong';
+          valueDropdown = 'Hong Kong';
           termsCountry = terms.hongKong!;
         }
         break;
-      case 'taiwan':
+      case 'Taiwan':
         {
-          valueDropdown = 'taiwan';
+          valueDropdown = 'Taiwan';
           termsCountry = terms.taiwan!;
         }
         break;
-      case 'canada':
+      case 'Canada':
         {
-          valueDropdown = 'canada';
+          valueDropdown = 'Canada';
           termsCountry = terms.canada!;
         }
         break;
-      case 'germany':
+      case 'Germany':
         {
-          valueDropdown = 'germany';
+          valueDropdown = 'Germany';
           termsCountry = terms.germany!;
         }
         break;
-      case 'netherlands':
+      case 'Netherlands':
         {
-          valueDropdown = 'netherlands';
+          valueDropdown = 'Netherlands';
           termsCountry = terms.netherlands!;
         }
         break;
-      case 'indonesia':
+      case 'Indonesia':
         {
-          valueDropdown = 'indonesia';
+          valueDropdown = 'Indonesia';
           termsCountry = terms.indonesia!;
         }
         break;
-      case 'south_korea':
+      case 'South Korea':
         {
-          valueDropdown = 'south_korea';
+          valueDropdown = 'South Korea';
           termsCountry = terms.southKorea!;
         }
         break;
-      case 'turkey':
+      case 'Turkey':
         {
-          valueDropdown = 'turkey';
+          valueDropdown = 'Turkey';
           termsCountry = terms.turkey!;
         }
         break;
-      case 'philippines':
+      case 'Philippines':
         {
-          valueDropdown = 'philippines';
+          valueDropdown = 'Philippines';
           termsCountry = terms.philippines!;
         }
         break;
-      case 'italy':
+      case 'Italy':
         {
-          valueDropdown = 'italy';
+          valueDropdown = 'Italy';
           termsCountry = terms.italy!;
         }
         break;
-      case 'vietnam':
+      case 'Vietnam':
         {
-          valueDropdown = 'vietnam';
+          valueDropdown = 'Vietnam';
           termsCountry = terms.vietnam!;
         }
         break;
-      case 'egypt':
+      case 'Egypt':
         {
-          valueDropdown = 'egypt';
+          valueDropdown = 'Egypt';
           termsCountry = terms.egypt!;
         }
         break;
-      case 'argentina':
+      case 'Argentina':
         {
-          valueDropdown = 'argentina';
+          valueDropdown = 'Argentina';
           termsCountry = terms.argentina!;
         }
         break;
-      case 'poland':
+      case 'Poland':
         {
-          valueDropdown = 'poland';
+          valueDropdown = 'Poland';
           termsCountry = terms.poland!;
         }
         break;
-      case 'colombia':
+      case 'Colombia':
         {
-          valueDropdown = 'colombia';
+          valueDropdown = 'Colombia';
           termsCountry = terms.colombia!;
         }
         break;
-      case 'ukraine':
+      case 'Ukraine':
         {
-          valueDropdown = 'ukraine';
+          valueDropdown = 'Ukraine';
           termsCountry = terms.ukraine!;
         }
         break;
-      case 'saudi_arabia':
+      case 'Aaudi Arabia':
         {
-          valueDropdown = 'saudi_arabia';
+          valueDropdown = 'Aaudi Arabia';
           termsCountry = terms.saudiArabia!;
         }
         break;
-      case 'kenya':
+      case 'Kenya':
         {
-          valueDropdown = 'kenya';
+          valueDropdown = 'Kenya';
           termsCountry = terms.kenya!;
         }
         break;
-      case 'chile':
+      case 'Chile':
         {
-          valueDropdown = 'chile';
+          valueDropdown = 'Chile';
           termsCountry = terms.chile!;
         }
         break;
-      case 'romania':
+      case 'Romania':
         {
-          valueDropdown = 'romania';
+          valueDropdown = 'Romania';
           termsCountry = terms.romania!;
         }
         break;
-      case 'south_africa':
+      case 'South Africa':
         {
-          valueDropdown = 'south_africa';
+          valueDropdown = 'South Africa';
           termsCountry = terms.southAfrica!;
         }
         break;
-      case 'belgium':
+      case 'Belgium':
         {
-          valueDropdown = 'belgium';
+          valueDropdown = 'Belgium';
           termsCountry = terms.belgium!;
         }
         break;
-      case 'sweden':
+      case 'Sweden':
         {
-          valueDropdown = 'sweden';
+          valueDropdown = 'Sweden';
           termsCountry = terms.sweden!;
         }
         break;
-      case 'austria':
+      case 'Austria':
         {
-          valueDropdown = 'austria';
+          valueDropdown = 'Austria';
           termsCountry = terms.austria!;
         }
         break;
-      case 'switzerland':
+      case 'Switzerland':
         {
-          valueDropdown = 'switzerland';
+          valueDropdown = 'Switzerland';
           termsCountry = terms.switzerland!;
         }
         break;
-      case 'greece':
+      case 'Greece':
         {
-          valueDropdown = 'greece';
+          valueDropdown = 'Greece';
           termsCountry = terms.greece!;
         }
         break;
-      case 'denmark':
+      case 'Denmark':
         {
-          valueDropdown = 'denmark';
+          valueDropdown = 'Denmark';
           termsCountry = terms.denmark!;
         }
         break;
-      case 'norway':
+      case 'Norway':
         {
-          valueDropdown = 'norway';
+          valueDropdown = 'Norway';
           termsCountry = terms.norway!;
         }
         break;
-      case 'nigeria':
+      case 'Nigeria':
         {
-          valueDropdown = 'nigeria';
+          valueDropdown = 'Nigeria';
           termsCountry = terms.nigeria!;
         }
         break;
-      case 'new_zealand':
+      case 'New Zealand':
         {
-          valueDropdown = 'new_zealand';
+          valueDropdown = 'New Zealand';
           termsCountry = terms.newZealand!;
         }
         break;
-      case 'ireland':
+      case 'Ireland':
         {
-          valueDropdown = 'ireland';
+          valueDropdown = 'Ireland';
           termsCountry = terms.ireland!;
         }
         break;
-      case 'czech_republic':
+      case 'Czech Republic':
         {
-          valueDropdown = 'czech_republic';
+          valueDropdown = 'Czech Republic';
           termsCountry = terms.czechRepublic!;
         }
         break;
-      case 'portugal':
+      case 'Portugal':
         {
-          valueDropdown = 'portugal';
+          valueDropdown = 'Portugal';
           termsCountry = terms.portugal!;
         }
         break;
-      case 'mexico':
+      case 'Mexico':
         {
-          valueDropdown = 'mexico';
+          valueDropdown = 'Mexico';
           termsCountry = terms.mexico!;
         }
         break;
-      case 'malaysia':
+      case 'Malaysia':
         {
-          valueDropdown = 'malaysia';
+          valueDropdown = 'Malaysia';
           termsCountry = terms.malaysia!;
         }
         break;
-      case 'hungary':
+      case 'Hungary':
         {
-          valueDropdown = 'hungary';
+          valueDropdown = 'Hungary';
           termsCountry = terms.hungary!;
         }
         break;
-      case 'russia':
+      case 'Russia':
         {
-          valueDropdown = 'russia';
+          valueDropdown = 'Russia';
           termsCountry = terms.russia!;
         }
         break;
-      case 'thailand':
+      case 'Thailand':
         {
-          valueDropdown = 'thailand';
+          valueDropdown = 'Thailand';
           termsCountry = terms.thailand!;
         }
         break;
-      case 'france':
+      case 'France':
         {
-          valueDropdown = 'france';
+          valueDropdown = 'France';
           termsCountry = terms.france!;
         }
         break;
-      case 'united_kingdom':
+      case 'United Kingdom':
         {
-          valueDropdown = 'united_kingdom';
+          valueDropdown = 'United Kingdom';
           termsCountry = terms.unitedKingdom!;
         }
         break;
-      case 'finland':
+      case 'Finland':
         {
-          valueDropdown = 'finland';
+          valueDropdown = 'Finland';
           termsCountry = terms.finland!;
         }
         break;
