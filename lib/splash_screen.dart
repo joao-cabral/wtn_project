@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:wtn_project/views/home_view.dart';
 
@@ -109,16 +110,19 @@ class _SecondClassState extends State<SecondClass>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff412EEF),
+      backgroundColor: Colors.green[100],
       body: Center(
         child: DefaultTextStyle(
           style: const TextStyle(fontSize: 30.0),
           child: AnimatedTextKit(
             animatedTexts: [
-              TyperAnimatedText(
-                'What\'s the news?',
-                speed: const Duration(milliseconds: 150),
-              ),
+              TyperAnimatedText('What\'s the news?',
+                  speed: const Duration(milliseconds: 150),
+                  textStyle: GoogleFonts.rozhaOne(
+                    fontSize: 28,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black,
+                  )),
             ],
             isRepeatingAnimation: false,
             repeatForever: false,
