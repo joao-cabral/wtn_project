@@ -26,6 +26,10 @@ class MenuHomePageComponent extends StatelessWidget {
             break;
         }
       },
+      icon: const Icon(
+        Icons.more_vert_rounded,
+        color: Colors.black,
+      ),
       itemBuilder: (context) => [
         // const PopupMenuItem<_MenuOptions>(
         //   value: _MenuOptions.changeTheme,
