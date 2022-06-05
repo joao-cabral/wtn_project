@@ -29,14 +29,15 @@ class _CustomDropdownComponentState extends State<CustomDropdownComponent> {
           borderRadius: const BorderRadius.all(Radius.circular(25)),
           child: Container(
             alignment: Alignment.center,
-            decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                // color: Colors.green[400],
-                color: Colors.white),
-            child: Icon(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.green[400],
+              // color: Colors.green[400],
+            ),
+            child: const Icon(
               Icons.arrow_drop_down_rounded,
               size: 50,
-              color: Colors.green[700],
+              color: Colors.white,
             ),
           ),
         ),

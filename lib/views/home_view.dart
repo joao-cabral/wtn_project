@@ -74,7 +74,8 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.green[100],
+      // backgroundColor: Colors.white70.withOpacity(0.9),
+      backgroundColor: Colors.white,
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(
             parent: AlwaysScrollableScrollPhysics()),
@@ -83,17 +84,18 @@ class _HomeViewState extends State<HomeView> {
             floating: true,
             pinned: false,
             expandedHeight: w * 0.3,
-            backgroundColor: Colors.green[900],
+            backgroundColor: Colors.white,
             flexibleSpace: FlexibleSpaceBar(
               //TODO: Change to a banner ad
-              //TODO: Change font in title
+              //Fix the return home after sending email
+              //Change design page improvements
               title:
                   Consumer<TermsController>(builder: (context, controller, _) {
                 return Text(controller.valueDropdown!,
                     style: GoogleFonts.rozhaOne(
                       fontSize: 24,
                       fontWeight: FontWeight.w600,
-                      color: Colors.white,
+                      color: Colors.black,
                     ));
               }),
               centerTitle: true,

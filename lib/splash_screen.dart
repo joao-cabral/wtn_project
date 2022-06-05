@@ -110,13 +110,13 @@ class _SecondClassState extends State<SecondClass>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[100],
+      backgroundColor: Colors.white,
       body: Center(
         child: DefaultTextStyle(
           style: const TextStyle(fontSize: 30.0),
           child: AnimatedTextKit(
             animatedTexts: [
-              TyperAnimatedText('What\'s the news?',
+              TyperAnimatedText('What\'s the news? ',
                   speed: const Duration(milliseconds: 150),
                   textStyle: GoogleFonts.rozhaOne(
                     fontSize: 28,
