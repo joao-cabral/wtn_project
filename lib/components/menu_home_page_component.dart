@@ -37,7 +37,7 @@ class MenuHomePageComponent extends StatelessWidget {
         // ),
         const PopupMenuItem<_MenuOptions>(
           value: _MenuOptions.improvements,
-          child: Text('Melhorias?'),
+          child: Text('Feedback'),
         ),
         const PopupMenuItem<_MenuOptions>(
           value: _MenuOptions.about,

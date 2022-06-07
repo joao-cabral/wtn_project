@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wtn_project/routes/routes.dart';
 
 class ImprovementsView extends StatefulWidget {
   const ImprovementsView({Key? key}) : super(key: key);
@@ -16,15 +15,53 @@ class _ImprovementsViewState extends State<ImprovementsView> {
   TextEditingController subjectController = TextEditingController();
   TextEditingController messageController = TextEditingController();
   bool enableButton = false;
-  bool validateTextEmail = false;
-  bool validadeTextSubject = false;
   bool validadeTextMessage = false;
+
+  Future<void> sendEmail(String bodyText) async {
+    final Email email = Email(
+      body: bodyText,
+      subject: '[WTN]',
+      recipients: ['joaocabral1232@gmail.com'],
+      isHTML: false,
+    );
+
+    String platformResponse;
+
+    try {
+      await FlutterEmailSender.send(email);
+      platformResponse = 'Obrigado por nos ajudar!';
+    } catch (error) {
+      print(error);
+      platformResponse = error.toString();
+    }
+
+    if (!mounted) return;
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(platformResponse),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Diga lá'),
+        title: Text(
+          'Diga lá',
+          style: GoogleFonts.spaceMono(
+            fontSize: 18,
+            fontWeight: FontWeight.w700,
+            color: Colors.black,
+          ),
+        ),
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          color: Colors.black,
+          onPressed: () => Navigator.pop(context),
+        ),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -74,7 +111,7 @@ class _ImprovementsViewState extends State<ImprovementsView> {
                   height: 40,
                 ),
                 Container(
-                  color: Colors.blue,
+                  color: Colors.green[400],
                   width: double.maxFinite,
                   child: TextButton(
                     style: TextButton.styleFrom(
@@ -92,19 +129,8 @@ class _ImprovementsViewState extends State<ImprovementsView> {
                     ),
                     onPressed: () async {
                       if (messageController.text.isNotEmpty) {
-                        await FlutterEmailSender.send(Email(
-                          body: messageController.text,
-                          subject: '[WTN]',
-                          recipients: ['joaocabral1232@gmail.com'],
-                          isHTML: false,
-                        ));
-                        Navigator.popUntil(
-                          context,
-                          ModalRoute.withName(
-                            Routes.home,
-                          ),
-                        );
-                        print('Valiado');
+                        await sendEmail(messageController.text)
+                            .then((value) => messageController.clear());
                       } else {
                         setState(
                           () {

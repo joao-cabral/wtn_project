@@ -20,10 +20,8 @@ class _CustomDropdownComponentState extends State<CustomDropdownComponent> {
         onSelected: (value) async {
           context.read<TermsController>().changeCountry(value);
         },
-        padding: const EdgeInsets.all(4),
-        // shape: RoundedRectangleBorder(
-        //   borderRadius: BorderRadius.circular(4),
-        // ),
+        constraints:
+            BoxConstraints(maxHeight: MediaQuery.of(context).size.height * 0.8),
         child: Material(
           elevation: 4,
           borderRadius: const BorderRadius.all(Radius.circular(25)),

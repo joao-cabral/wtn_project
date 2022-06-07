@@ -75,7 +75,6 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
-      // backgroundColor: Colors.white70.withOpacity(0.9),
       backgroundColor: Colors.white,
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(
@@ -86,13 +85,6 @@ class _HomeViewState extends State<HomeView> {
             pinned: false,
             expandedHeight: w * 0.3,
             backgroundColor: Colors.white,
-            // leading: const SizedBox(
-            //   height: 60,
-            //   width: 60,
-            //   child: Image(
-            //     image: AssetImage(icon),
-            //   ),
-            // ),
             leading: const Padding(
               padding: EdgeInsets.only(left: 8.0),
               child: Icon(
@@ -103,8 +95,6 @@ class _HomeViewState extends State<HomeView> {
             ),
             flexibleSpace: FlexibleSpaceBar(
               //TODO: Change to a banner ad
-              //Fix the return home after sending email
-              //Change design page improvements
               title:
                   Consumer<TermsController>(builder: (context, controller, _) {
                 return Text(controller.valueDropdown!,
@@ -119,21 +109,6 @@ class _HomeViewState extends State<HomeView> {
             actions: const [
               MenuHomePageComponent(),
             ],
-            bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(0.0),
-              child: Transform.translate(
-                offset: const Offset(0, 20),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 24.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: const [
-                      // CustomDropdownComponent(),
-                    ],
-                  ),
-                ),
-              ),
-            ),
           ),
           SliverList(
             delegate: SliverChildListDelegate(
