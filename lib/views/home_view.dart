@@ -23,6 +23,7 @@ class _HomeViewState extends State<HomeView> {
   final random = Random();
   String valueDropdown = 'brazil';
 
+  static const icon = 'assets/icon2.png';
   BannerAd? ad;
 
   @override
@@ -85,6 +86,21 @@ class _HomeViewState extends State<HomeView> {
             pinned: false,
             expandedHeight: w * 0.3,
             backgroundColor: Colors.white,
+            // leading: const SizedBox(
+            //   height: 60,
+            //   width: 60,
+            //   child: Image(
+            //     image: AssetImage(icon),
+            //   ),
+            // ),
+            leading: const Padding(
+              padding: EdgeInsets.only(left: 8.0),
+              child: Icon(
+                Icons.auto_stories_outlined,
+                color: Colors.black,
+                size: 35,
+              ),
+            ),
             flexibleSpace: FlexibleSpaceBar(
               //TODO: Change to a banner ad
               //Fix the return home after sending email
@@ -112,7 +128,7 @@ class _HomeViewState extends State<HomeView> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: const [
-                      CustomDropdownComponent(),
+                      // CustomDropdownComponent(),
                     ],
                   ),
                 ),
@@ -122,24 +138,25 @@ class _HomeViewState extends State<HomeView> {
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        'Top pesquisas',
-                        style: GoogleFonts.spaceMono(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.black,
+                Padding(
+                  padding: const EdgeInsets.only(left: 14.0, right: 14.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Top pesquisas',
+                          style: GoogleFonts.spaceMono(
+                            fontSize: 22,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                      const CustomDropdownComponent(),
+                    ],
+                  ),
                 ),
               ],
             ),
