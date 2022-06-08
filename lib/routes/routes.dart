@@ -4,4 +4,5 @@ class Routes {
   static const String details = './views/searcTermsView.dart';
   static const String improvements =
       './views/menu_views/improvements_view.dart';
+  static const String about = './views/menu_views/about_view.dart';
 }

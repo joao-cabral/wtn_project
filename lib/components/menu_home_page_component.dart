@@ -22,7 +22,7 @@ class MenuHomePageComponent extends StatelessWidget {
             Navigator.pushNamed(context, Routes.improvements);
             break;
           case _MenuOptions.about:
-            print('About');
+            Navigator.pushNamed(context, Routes.about);
             break;
         }
       },
