@@ -45,6 +45,7 @@ dependencies:
   page_transition: ^2.0.5
   flutter_email_sender: ^5.1.0
   progress_state_button: ^1.0.4
+  share_plus: ^4.0.7
 
 dev_dependencies:
   flutter_test:
