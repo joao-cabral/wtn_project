@@ -6,6 +6,7 @@ import 'package:wtn_project/repository/terms_repository.dart';
 import 'package:wtn_project/routes/routes.dart';
 import 'package:wtn_project/splash_screen.dart';
 import 'package:wtn_project/views/menu_views/about_view.dart';
+import 'package:wtn_project/views/menu_views/feedback_view.dart';
 import 'package:wtn_project/views/menu_views/improvements_view.dart';
 import 'package:wtn_project/views/search_terms_view.dart';
 import 'package:wtn_project/views/home_view.dart';
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
           Routes.details: (_) => const SearchTermView(),
           Routes.improvements: (_) => const ImprovementsView(),
           Routes.about: (_) => const AboutView(),
+          Routes.feedback: (_) => const FeedbackView(),
         },
       ),
     );

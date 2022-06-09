@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wtn_project/routes/routes.dart';
 
 enum _MenuOptions {
-  improvements,
+  feedback,
   // changeTheme,
   about,
 }
@@ -18,8 +18,8 @@ class MenuHomePageComponent extends StatelessWidget {
           // case _MenuOptions.changeTheme:
           //   print('changeTheme');
           //   break;
-          case _MenuOptions.improvements:
-            Navigator.pushNamed(context, Routes.improvements);
+          case _MenuOptions.feedback:
+            Navigator.pushNamed(context, Routes.feedback);
             break;
           case _MenuOptions.about:
             Navigator.pushNamed(context, Routes.about);
@@ -36,7 +36,7 @@ class MenuHomePageComponent extends StatelessWidget {
         //   child: Text('Tema'),
         // ),
         const PopupMenuItem<_MenuOptions>(
-          value: _MenuOptions.improvements,
+          value: _MenuOptions.feedback,
           child: Text('Feedback'),
         ),
         const PopupMenuItem<_MenuOptions>(
