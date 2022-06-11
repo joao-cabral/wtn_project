@@ -1,8 +1,21 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutView extends StatelessWidget {
   const AboutView({Key? key}) : super(key: key);
+
+  Future launchURL(Uri url) async {
+    try {
+      await launchUrl(
+        url,
+        mode: LaunchMode.externalApplication,
+      );
+    } catch (error) {
+      print(error);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +65,7 @@ class AboutView extends StatelessWidget {
                     ),
                     Expanded(
                       child: Text(
-                        "WTN tem como objetivo ser uma versao mobile do ",
+                        "WTN tem como objetivo ser uma versão mobile do ",
                         style: GoogleFonts.spaceMono(
                           fontSize: 18,
                           fontWeight: FontWeight.w700,
@@ -85,13 +98,25 @@ class AboutView extends StatelessWidget {
                       ),
                     ),
                     TextSpan(
-                      text:
-                          " Voce pode visitar o site oficial nesse link (link do site oficial).",
+                      text: " Você  pode visitar o site oficial nesse link: ",
                       style: GoogleFonts.spaceMono(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
                         color: Colors.black,
                       ),
+                    ),
+                    TextSpan(
+                      text: "Google Trends",
+                      style: GoogleFonts.spaceMono(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.black,
+                          decoration: TextDecoration.underline),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () async {
+                          await launchURL(Uri.parse(
+                              "https://trends.google.com/trends/hottrends/visualize"));
+                        },
                     ),
                     TextSpan(
                       text: "\n\n",
@@ -103,7 +128,7 @@ class AboutView extends StatelessWidget {
                     ),
                     TextSpan(
                       text:
-                          "Pelo app voce pode visializar as noticias mais relevantes pesquisadas no Google, com a opçao de filtrar por pais. Fique por dentro das noticias :)",
+                          "Pelo app você  pode visualizar as notícias  mais relevantes e pesquisadas no Google, com a opção de filtrar por país. Fique por dentro das notícias :)",
                       style: GoogleFonts.spaceMono(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
