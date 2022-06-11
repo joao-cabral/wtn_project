@@ -55,14 +55,15 @@ class FeedbackView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.all(14.0),
+            padding: const EdgeInsets.only(left: 14.0, right: 50, top: 14.0),
             child: Text(
               "Adoraria saber como deixar o WTN melhor. Por favor, deixe um comentário na Google Play ou envie um email - Isso vai ser demais!",
               style: GoogleFonts.spaceMono(
                 fontSize: 14,
-                fontWeight: FontWeight.w300,
+                fontWeight: FontWeight.w500,
                 color: Colors.black,
               ),
+              textAlign: TextAlign.justify,
             ),
           ),
           ListTile(
@@ -71,7 +72,7 @@ class FeedbackView extends StatelessWidget {
               "Escreva um comentário",
               style: GoogleFonts.spaceMono(
                 fontSize: 18,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
                 color: Colors.black,
               ),
             ),
@@ -82,7 +83,7 @@ class FeedbackView extends StatelessWidget {
               "Me contate por email",
               style: GoogleFonts.spaceMono(
                 fontSize: 18,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
                 color: Colors.black,
               ),
             ),
@@ -105,7 +106,7 @@ class FeedbackView extends StatelessWidget {
               "Compartilhe com os amigos",
               style: GoogleFonts.spaceMono(
                 fontSize: 18,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
                 color: Colors.black,
               ),
             ),
@@ -123,7 +124,7 @@ class FeedbackView extends StatelessWidget {
               "Me siga no Instagram",
               style: GoogleFonts.spaceMono(
                 fontSize: 18,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
                 color: Colors.black,
               ),
             ),
@@ -142,7 +143,7 @@ class FeedbackView extends StatelessWidget {
               "Me siga no twitter",
               style: GoogleFonts.spaceMono(
                 fontSize: 18,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
                 color: Colors.black,
               ),
             ),
