@@ -31,7 +31,6 @@ class _ImprovementsViewState extends State<ImprovementsView> {
       await FlutterEmailSender.send(email);
       platformResponse = 'Obrigado por nos ajudar!';
     } catch (error) {
-      print(error);
       platformResponse = error.toString();
     }
 

@@ -22,8 +22,6 @@ class _HomeViewState extends State<HomeView> {
   bool? isLoadingAd;
   final random = Random();
   String valueDropdown = 'brazil';
-
-  static const icon = 'assets/icon2.png';
   BannerAd? ad;
 
   @override
