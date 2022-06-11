@@ -6,6 +6,8 @@ import 'package:share_plus/share_plus.dart';
 
 class FeedbackView extends StatelessWidget {
   const FeedbackView({Key? key}) : super(key: key);
+  static const iconInstagram = "assets/instagram.png";
+  static const iconTwitter = "assets/twitter.png";
 
   onShare(BuildContext context) async {
     final box = context.findRenderObject() as RenderBox?;
@@ -55,7 +57,7 @@ class FeedbackView extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(14.0),
             child: Text(
-              "Adoraria saber como deixar o WTN melhor. Por favor, deixe um comentario na Google Play ou envie um email - Isso vai ser demais!",
+              "Adoraria saber como deixar o WTN melhor. Por favor, deixe um comentário na Google Play ou envie um email - Isso vai ser demais!",
               style: GoogleFonts.spaceMono(
                 fontSize: 14,
                 fontWeight: FontWeight.w300,
@@ -66,7 +68,7 @@ class FeedbackView extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.star, color: Colors.black),
             title: Text(
-              "Escreva um comentario",
+              "Escreva um comentário",
               style: GoogleFonts.spaceMono(
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
@@ -86,17 +88,17 @@ class FeedbackView extends StatelessWidget {
             ),
             onTap: () => Navigator.pushNamed(context, Routes.improvements),
           ),
-          Padding(
-            padding: const EdgeInsets.all(14.0),
-            child: Text(
-              "Apoie mais :)",
-              style: GoogleFonts.spaceMono(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.all(14.0),
+          //   child: Text(
+          //     "Apoie mais :)",
+          //     style: GoogleFonts.spaceMono(
+          //       fontSize: 18,
+          //       fontWeight: FontWeight.bold,
+          //       color: Colors.black,
+          //     ),
+          //   ),
+          // ),
           ListTile(
             leading: const Icon(Icons.share, color: Colors.black),
             title: Text(
@@ -110,7 +112,13 @@ class FeedbackView extends StatelessWidget {
             onTap: () => onShare(context),
           ),
           ListTile(
-            leading: const Icon(Icons.follow_the_signs, color: Colors.black),
+            leading: const SizedBox(
+              height: 30,
+              width: 30,
+              child: Image(
+                image: AssetImage(iconInstagram),
+              ),
+            ),
             title: Text(
               "Me siga no Instagram",
               style: GoogleFonts.spaceMono(
@@ -123,7 +131,13 @@ class FeedbackView extends StatelessWidget {
                 launchURL(Uri.parse("https://instagram.com/juao.cabral")),
           ),
           ListTile(
-            leading: const Icon(Icons.follow_the_signs, color: Colors.black),
+            leading: const SizedBox(
+              height: 30,
+              width: 30,
+              child: Image(
+                image: AssetImage(iconTwitter),
+              ),
+            ),
             title: Text(
               "Me siga no twitter",
               style: GoogleFonts.spaceMono(
