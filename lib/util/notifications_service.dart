@@ -59,7 +59,7 @@ class NotificationService {
   }
 
   showNotificationScheduled(CustomNotification notification) async {
-    final date = DateTime.now().add(const Duration(hours: 9));
+    final date = DateTime.now().add(const Duration(hours: 8));
 
     const androidDetails = AndroidNotificationDetails(
       'terms_notification',
