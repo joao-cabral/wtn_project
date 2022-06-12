@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wtn_project/routes/routes.dart';
 
 enum _MenuOptions {
   feedback,
@@ -19,10 +18,10 @@ class MenuHomePageComponent extends StatelessWidget {
           //   print('changeTheme');
           //   break;
           case _MenuOptions.feedback:
-            Navigator.pushNamed(context, Routes.feedback);
+            Navigator.pushNamed(context, 'feedback');
             break;
           case _MenuOptions.about:
-            Navigator.pushNamed(context, Routes.about);
+            Navigator.pushNamed(context, 'about');
             break;
         }
       },

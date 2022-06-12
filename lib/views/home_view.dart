@@ -8,7 +8,6 @@ import 'package:wtn_project/components/menu_home_page_component.dart';
 import 'package:wtn_project/components/custom_dropdown_component.dart';
 import 'package:wtn_project/controllers/terms_controller.dart';
 import 'package:wtn_project/model/arguments_routes_model.dart';
-import 'package:wtn_project/routes/routes.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -194,7 +193,7 @@ class _HomeViewState extends State<HomeView> {
                                           onTap: () {
                                             Navigator.pushNamed(
                                               context,
-                                              Routes.details,
+                                              'details',
                                               arguments: ArgumentsRoutesModel(
                                                 term: controller
                                                     .termsCountry[index],

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:wtn_project/routes/routes.dart';
 import 'package:share_plus/share_plus.dart';
 
 class FeedbackView extends StatelessWidget {
@@ -87,7 +86,7 @@ class FeedbackView extends StatelessWidget {
                 color: Colors.black,
               ),
             ),
-            onTap: () => Navigator.pushNamed(context, Routes.improvements),
+            onTap: () => Navigator.pushNamed(context, 'improvements'),
           ),
           // Padding(
           //   padding: const EdgeInsets.all(14.0),
