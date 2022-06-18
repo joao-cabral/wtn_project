@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:share_plus/share_plus.dart';
@@ -12,7 +13,7 @@ class FeedbackView extends StatelessWidget {
     final box = context.findRenderObject() as RenderBox?;
 
     await Share.share(
-      '''Estou usando "What's the news?"\nVenha conhecer voce tambem\n(Link:)''',
+      '''Estou usando "What's the news?"\nVenha conhecer você tambem\nhttps://play.google.com/apps/test/br.com.wtn_project.adenilso/1''',
       subject: "subject",
       sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
     );
@@ -27,6 +28,30 @@ class FeedbackView extends StatelessWidget {
     } catch (error) {
       print(error);
     }
+  }
+
+  Future<void> sendEmail(BuildContext context) async {
+    final Email email = Email(
+      body: '(Escreva aqui)',
+      subject: '[WTN]',
+      recipients: ['joaocabral1232@gmail.com'],
+      isHTML: false,
+    );
+
+    String platformResponse;
+
+    try {
+      await FlutterEmailSender.send(email);
+      platformResponse = 'Obrigado por nos ajudar!';
+    } catch (error) {
+      platformResponse = error.toString();
+    }
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(platformResponse),
+      ),
+    );
   }
 
   @override
@@ -86,19 +111,10 @@ class FeedbackView extends StatelessWidget {
                 color: Colors.black,
               ),
             ),
-            onTap: () => Navigator.pushNamed(context, 'improvements'),
+            onTap: () async {
+              await sendEmail(context);
+            },
           ),
-          // Padding(
-          //   padding: const EdgeInsets.all(14.0),
-          //   child: Text(
-          //     "Apoie mais :)",
-          //     style: GoogleFonts.spaceMono(
-          //       fontSize: 18,
-          //       fontWeight: FontWeight.bold,
-          //       color: Colors.black,
-          //     ),
-          //   ),
-          // ),
           ListTile(
             leading: const Icon(Icons.share, color: Colors.black),
             title: Text(
@@ -147,6 +163,18 @@ class FeedbackView extends StatelessWidget {
               ),
             ),
             onTap: () => launchURL(Uri.parse("https://twitter.com/devCjoao")),
+          ),
+          ListTile(
+            leading: const Icon(Icons.phone, color: Colors.black),
+            title: Text(
+              "Contatos",
+              style: GoogleFonts.spaceMono(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                color: Colors.black,
+              ),
+            ),
+            onTap: () => Navigator.pushNamed(context, 'contacts'),
           ),
         ],
       ),
