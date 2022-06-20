@@ -65,7 +65,7 @@ class AboutView extends StatelessWidget {
                     ),
                     Expanded(
                       child: Text(
-                        "WTN tem como objetivo ser uma versão mobile do ",
+                        "WTN tem como objetivo ser um app onde você fica por dentro ",
                         style: GoogleFonts.spaceMono(
                           fontSize: 18,
                           fontWeight: FontWeight.w700,
@@ -81,7 +81,25 @@ class AboutView extends StatelessWidget {
                   // style: DefaultTextStyle.of(context).style,
                   children: [
                     TextSpan(
-                      text: "site da Google chamado ",
+                      text: "das notícias mais relevantes do dia. ",
+                      style: GoogleFonts.spaceMono(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.black,
+                      ),
+                    ),
+                    // TextSpan(
+                    //   text: "",
+                    //   style: GoogleFonts.spaceMono(
+                    //     backgroundColor: Colors.grey.withOpacity(0.3),
+                    //     fontSize: 18,
+                    //     fontWeight: FontWeight.w700,
+                    //     color: Colors.black,
+                    //   ),
+                    // ),
+                    TextSpan(
+                      text:
+                          " Você  pode visitar o site oficial que serviu como inspiração para o WTN: ",
                       style: GoogleFonts.spaceMono(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
@@ -89,24 +107,7 @@ class AboutView extends StatelessWidget {
                       ),
                     ),
                     TextSpan(
-                      text: "Hot Searches - Google Trends.",
-                      style: GoogleFonts.spaceMono(
-                        backgroundColor: Colors.grey.withOpacity(0.3),
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.black,
-                      ),
-                    ),
-                    TextSpan(
-                      text: " Você  pode visitar o site oficial nesse link: ",
-                      style: GoogleFonts.spaceMono(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.black,
-                      ),
-                    ),
-                    TextSpan(
-                      text: "Google Trends",
+                      text: "Site",
                       style: GoogleFonts.spaceMono(
                           fontSize: 18,
                           fontWeight: FontWeight.w700,
@@ -128,7 +129,7 @@ class AboutView extends StatelessWidget {
                     ),
                     TextSpan(
                       text:
-                          "Pelo app você  pode visualizar as notícias  mais relevantes e pesquisadas no Google, com a opção de filtrar por país. Fique por dentro das notícias :)",
+                          "Pelo app você  pode visualizar as notícias  mais relevantes e pesquisadas, com a opção de filtrar por país. Fique por dentro das notícias :)",
                       style: GoogleFonts.spaceMono(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
