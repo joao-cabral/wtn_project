@@ -13,7 +13,7 @@ class FeedbackView extends StatelessWidget {
     final box = context.findRenderObject() as RenderBox?;
 
     await Share.share(
-      '''Estou usando "What's the news?"\nVenha conhecer você tambem\nhttps://play.google.com/apps/test/br.com.wtn_project.adenilso/1''',
+      '''Estou usando "What's the news?"\nVenha conhecer você tambem\nhttps://play.google.com/apps/test/br.com.adenilso.wtn/1''',
       subject: "subject",
       sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
     );

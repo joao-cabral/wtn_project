@@ -1,4 +1,4 @@
-package br.com.wtn_project.adenilso
+package br.com.adenilso.wtn
 
 import io.flutter.embedding.android.FlutterActivity
 
