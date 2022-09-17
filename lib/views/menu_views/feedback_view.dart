@@ -167,39 +167,6 @@ class FeedbackView extends StatelessWidget {
             onTap: () =>
                 launchURL(Uri.parse("https://instagram.com/juao.cabral")),
           ),
-<<<<<<< HEAD
-=======
-          ListTile(
-            leading: const SizedBox(
-              height: 30,
-              width: 30,
-              child: Image(
-                image: AssetImage(iconTwitter),
-              ),
-            ),
-            title: Text(
-              "Me siga no twitter",
-              style: GoogleFonts.spaceMono(
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-                color: Colors.black,
-              ),
-            ),
-            onTap: () => launchURL(Uri.parse("https://twitter.com/devCjoao")),
-          ),
-          ListTile(
-            leading: const Icon(Icons.phone, color: Colors.black),
-            title: Text(
-              "Contatos",
-              style: GoogleFonts.spaceMono(
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-                color: Colors.black,
-              ),
-            ),
-            onTap: () => Navigator.pushNamed(context, 'contacts'),
-          ),
->>>>>>> 9bb68e760e915906d226573ea269ca8e0ac2976e
         ],
       ),
     );
