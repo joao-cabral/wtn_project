@@ -8,7 +8,7 @@
         </intent>
     </queries>
    <application
-        android:label="What's The News"
+        android:label="Adenilso"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
