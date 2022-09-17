@@ -65,7 +65,7 @@ class AboutView extends StatelessWidget {
                     ),
                     Expanded(
                       child: Text(
-                        "WTN tem como objetivo ser uma versão mobile do ",
+                        "Adenilso tem como objetivo ser uma versão mobile do ",
                         style: GoogleFonts.spaceMono(
                           fontSize: 18,
                           fontWeight: FontWeight.w700,
@@ -128,7 +128,24 @@ class AboutView extends StatelessWidget {
                     ),
                     TextSpan(
                       text:
-                          "Pelo app você  pode visualizar as notícias  mais relevantes e pesquisadas no Google, com a opção de filtrar por país. Fique por dentro das notícias :)",
+                          "No app você visualiza as notícias mais pesquisadas no Google, com a opção de filtrar por país. Fique por dentro das notícias :)",
+                      style: GoogleFonts.spaceMono(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.black,
+                      ),
+                    ),
+                    TextSpan(
+                      text: "\n\n",
+                      style: GoogleFonts.spaceMono(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.black,
+                      ),
+                    ),
+                    TextSpan(
+                      text:
+                          '''Curiosidade sobre o nome "Adenilso": Inicialmente era para se chamar "Whats The News", porém a vontade de fazer um trocadilho é maior''',
                       style: GoogleFonts.spaceMono(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
