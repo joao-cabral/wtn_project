@@ -45,11 +45,8 @@ class AboutView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 65,
-                // color: Colors.yellow,
+                height: 90,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       "O",
@@ -65,7 +62,7 @@ class AboutView extends StatelessWidget {
                     ),
                     Expanded(
                       child: Text(
-                        "Adenilso tem como objetivo ser uma versão mobile do ",
+                        "Adenilso tem como objetivo mostrar o Trends Topics",
                         style: GoogleFonts.spaceMono(
                           fontSize: 18,
                           fontWeight: FontWeight.w700,
@@ -80,7 +77,7 @@ class AboutView extends StatelessWidget {
                 text: TextSpan(
                   children: [
                     TextSpan(
-                      text: "das notícias mais relevantes do dia. ",
+                      text: "das notícias mais pesquisadas do dia. ",
                       style: GoogleFonts.spaceMono(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
@@ -89,7 +86,7 @@ class AboutView extends StatelessWidget {
                     ),
                     TextSpan(
                       text:
-                          " Você  pode visitar o site oficial que serviu como inspiração para o WTN: ",
+                          " Você pode visitar o site oficial que serviu como inspiração: ",
                       style: GoogleFonts.spaceMono(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
@@ -97,7 +94,7 @@ class AboutView extends StatelessWidget {
                       ),
                     ),
                     TextSpan(
-                      text: "Site",
+                      text: "Google Trends",
                       style: GoogleFonts.spaceMono(
                           fontSize: 18,
                           fontWeight: FontWeight.w700,
@@ -119,7 +116,7 @@ class AboutView extends StatelessWidget {
                     ),
                     TextSpan(
                       text:
-                          "No app você visualiza as notícias mais pesquisadas no Google, com a opção de filtrar por país. Fique por dentro das notícias :)",
+                          "No app você visualiza as notícias mais pesquisadas no Google e com a opção de filtrar por país. Fique por dentro das notícias :)",
                       style: GoogleFonts.spaceMono(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
