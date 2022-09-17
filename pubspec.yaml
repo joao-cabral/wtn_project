@@ -49,6 +49,7 @@ dependencies:
   flutter_local_notifications:
   timezone:
   flutter_native_timezone:
+  launch_review: ^3.0.1
 
 dev_dependencies:
   flutter_test:
