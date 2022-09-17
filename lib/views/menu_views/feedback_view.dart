@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:launch_review/launch_review.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class FeedbackView extends StatelessWidget {
   const FeedbackView({Key? key}) : super(key: key);
@@ -56,7 +57,7 @@ class FeedbackView extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 14.0, right: 50, top: 14.0),
             child: Text(
-              "Adoraria saber como deixar o WTN melhor. Por favor, deixe um comentário na Google Play ou envie um email - Isso vai ser demais!",
+              "Adoraria saber como deixar o Adenilso melhor. Por favor, deixe um comentário na Google Play ou envie um email - Isso vai ser sensacional!",
               style: GoogleFonts.spaceMono(
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
@@ -68,13 +69,20 @@ class FeedbackView extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.star, color: Colors.black),
             title: Text(
-              "Escreva um comentário",
+              "Escreva um comentário e deixa sua avaliação",
               style: GoogleFonts.spaceMono(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
                 color: Colors.black,
               ),
             ),
+            trailing: const Icon(
+              Icons.arrow_forward_ios,
+              color: Colors.black,
+              size: 18,
+            ),
+            onTap: () => LaunchReview.launch(
+                androidAppId: 'br.com.wtn_project.adenilso'),
           ),
           ListTile(
             leading: const Icon(Icons.email, color: Colors.black),
@@ -86,19 +94,13 @@ class FeedbackView extends StatelessWidget {
                 color: Colors.black,
               ),
             ),
+            trailing: const Icon(
+              Icons.arrow_forward_ios,
+              color: Colors.black,
+              size: 18,
+            ),
             onTap: () => Navigator.pushNamed(context, 'improvements'),
           ),
-          // Padding(
-          //   padding: const EdgeInsets.all(14.0),
-          //   child: Text(
-          //     "Apoie mais :)",
-          //     style: GoogleFonts.spaceMono(
-          //       fontSize: 18,
-          //       fontWeight: FontWeight.bold,
-          //       color: Colors.black,
-          //     ),
-          //   ),
-          // ),
           ListTile(
             leading: const Icon(Icons.share, color: Colors.black),
             title: Text(
@@ -108,6 +110,11 @@ class FeedbackView extends StatelessWidget {
                 fontWeight: FontWeight.w600,
                 color: Colors.black,
               ),
+            ),
+            trailing: const Icon(
+              Icons.arrow_forward_ios,
+              color: Colors.black,
+              size: 18,
             ),
             onTap: () => onShare(context),
           ),
@@ -127,26 +134,13 @@ class FeedbackView extends StatelessWidget {
                 color: Colors.black,
               ),
             ),
+            trailing: const Icon(
+              Icons.arrow_forward_ios,
+              color: Colors.black,
+              size: 18,
+            ),
             onTap: () =>
                 launchURL(Uri.parse("https://instagram.com/juao.cabral")),
-          ),
-          ListTile(
-            leading: const SizedBox(
-              height: 30,
-              width: 30,
-              child: Image(
-                image: AssetImage(iconTwitter),
-              ),
-            ),
-            title: Text(
-              "Me siga no twitter",
-              style: GoogleFonts.spaceMono(
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-                color: Colors.black,
-              ),
-            ),
-            onTap: () => launchURL(Uri.parse("https://twitter.com/devCjoao")),
           ),
         ],
       ),
