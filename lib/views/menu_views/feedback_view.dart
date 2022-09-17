@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:launch_review/launch_review.dart';
 import 'package:share_plus/share_plus.dart';
@@ -13,7 +14,7 @@ class FeedbackView extends StatelessWidget {
     final box = context.findRenderObject() as RenderBox?;
 
     await Share.share(
-      '''Estou usando "What's the news?"\nVenha conhecer voce tambem\n(Link:)''',
+      '''Estou usando "What's the news?"\nVenha conhecer você tambem\nhttps://play.google.com/store/apps/details?id=br.com.adenilso.wtn''',
       subject: "subject",
       sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
     );
@@ -28,6 +29,30 @@ class FeedbackView extends StatelessWidget {
     } catch (error) {
       print(error);
     }
+  }
+
+  Future<void> sendEmail(BuildContext context) async {
+    final Email email = Email(
+      body: '(Escreva aqui)',
+      subject: '[WTN]',
+      recipients: ['joaocabral1232@gmail.com'],
+      isHTML: false,
+    );
+
+    String platformResponse;
+
+    try {
+      await FlutterEmailSender.send(email);
+      platformResponse = 'Obrigado por nos ajudar!';
+    } catch (error) {
+      platformResponse = error.toString();
+    }
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(platformResponse),
+      ),
+    );
   }
 
   @override
@@ -142,6 +167,39 @@ class FeedbackView extends StatelessWidget {
             onTap: () =>
                 launchURL(Uri.parse("https://instagram.com/juao.cabral")),
           ),
+<<<<<<< HEAD
+=======
+          ListTile(
+            leading: const SizedBox(
+              height: 30,
+              width: 30,
+              child: Image(
+                image: AssetImage(iconTwitter),
+              ),
+            ),
+            title: Text(
+              "Me siga no twitter",
+              style: GoogleFonts.spaceMono(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                color: Colors.black,
+              ),
+            ),
+            onTap: () => launchURL(Uri.parse("https://twitter.com/devCjoao")),
+          ),
+          ListTile(
+            leading: const Icon(Icons.phone, color: Colors.black),
+            title: Text(
+              "Contatos",
+              style: GoogleFonts.spaceMono(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                color: Colors.black,
+              ),
+            ),
+            onTap: () => Navigator.pushNamed(context, 'contacts'),
+          ),
+>>>>>>> 9bb68e760e915906d226573ea269ca8e0ac2976e
         ],
       ),
     );

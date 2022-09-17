@@ -32,7 +32,8 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 31
+    ndkVersion flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -49,12 +50,13 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "br.com.wtn_project.adenilso"
-        minSdkVersion 20
-        targetSdkVersion flutter.targetSdkVersion
+        applicationId "br.com.adenilso.wtn"
+        // You can update the following values to match your application needs.
+        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-build-configuration.
+        minSdkVersion 21
+        targetSdkVersion 31
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
-        multiDexEnabled = true
     }
 
     signingConfigs {
@@ -78,5 +80,4 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation("androidx.multidex:multidex:2.0.1")
 }

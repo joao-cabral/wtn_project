@@ -3,7 +3,7 @@ import 'package:wtn_project/splash_screen.dart';
 import 'package:wtn_project/views/home_view.dart';
 import 'package:wtn_project/views/menu_views/about_view.dart';
 import 'package:wtn_project/views/menu_views/feedback_view.dart';
-import 'package:wtn_project/views/menu_views/improvements_view.dart';
+import 'package:wtn_project/views/menu_views/contacts.dart';
 import 'package:wtn_project/views/search_terms_view.dart';
 
 class Routes {
@@ -11,7 +11,7 @@ class Routes {
       <String, WidgetBuilder>{
     'home': (_) => const HomeView(),
     'details': (_) => const SearchTermView(),
-    'improvements': (_) => const ImprovementsView(),
+    'contacts': (_) => const ContactsView(),
     'about': (_) => const AboutView(),
     'feedback': (_) => const FeedbackView(),
     'splashscreen': (_) => const SecondClass(),

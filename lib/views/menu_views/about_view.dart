@@ -78,10 +78,9 @@ class AboutView extends StatelessWidget {
               ),
               RichText(
                 text: TextSpan(
-                  // style: DefaultTextStyle.of(context).style,
                   children: [
                     TextSpan(
-                      text: "site da Google chamado ",
+                      text: "das notícias mais relevantes do dia. ",
                       style: GoogleFonts.spaceMono(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
@@ -89,16 +88,8 @@ class AboutView extends StatelessWidget {
                       ),
                     ),
                     TextSpan(
-                      text: "Hot Searches - Google Trends.",
-                      style: GoogleFonts.spaceMono(
-                        backgroundColor: Colors.grey.withOpacity(0.3),
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.black,
-                      ),
-                    ),
-                    TextSpan(
-                      text: " Você  pode visitar o site oficial nesse link: ",
+                      text:
+                          " Você  pode visitar o site oficial que serviu como inspiração para o WTN: ",
                       style: GoogleFonts.spaceMono(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
@@ -106,7 +97,7 @@ class AboutView extends StatelessWidget {
                       ),
                     ),
                     TextSpan(
-                      text: "Google Trends",
+                      text: "Site",
                       style: GoogleFonts.spaceMono(
                           fontSize: 18,
                           fontWeight: FontWeight.w700,

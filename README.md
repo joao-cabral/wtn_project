@@ -1,16 +1,35 @@
-# wtn_project
+![](https://img.shields.io/badge/Made%20in-Flutter-blue)
 
-A new Flutter project.
+<img src=".\images_typora\WTN-03.png" style="zoom:24%;" />
 
-## Getting Started
+# Adenilso ( What's The News? )
 
-This project is a starting point for a Flutter application.
+##### About The Project
 
-A few resources to get you started if this is your first Flutter project:
+This App is the mobile version of the Google Trends website.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+**Adenilso** shows users the most searched news of the day on google, it also shows a news thumbnail to locate the user what each news is about. **Install on google play and apple store soon.**
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+##### Functionalities
+
+- Filter most searched terms by country
+- Select term and direct to search thumb
+- Direct search to Chrome (if the user wants)
+
+#### Screenshots
+
+<img src=".\images_typora\photo4990475046032091624.jpg" alt="photo4990475046032091624" style="zoom:37%;" /><img src=".\images_typora\photo4990475046032091623.jpg" alt="photo4990475046032091623" style="zoom:37%;" /><img src=".\images_typora\photo4990475046032091621.jpg" alt="photo4990475046032091621" style="zoom:37%;" /><img src=".\images_typora\photo4990475046032091620.jpg" alt="photo4990475046032091620" style="zoom:37%;" />
+
+
+
+Google Trends website:
+
+![2022-06-24-00-03-40](.\images_typora\2022-06-24-00-03-40.gif)
+
+
+
+- How to get news data: The endpoint https://trends.google.com/trends/hottrends/visualize/internal/data return a json with data.
+
+### Credits
+
+Credit to [Google Trends](https://trends.google.com.br/trends/) for providing an API.
