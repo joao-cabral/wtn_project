@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
@@ -116,13 +117,15 @@ class _SecondClassState extends State<SecondClass>
           style: const TextStyle(fontSize: 30.0),
           child: AnimatedTextKit(
             animatedTexts: [
-              TyperAnimatedText('What\'s the news? ',
-                  speed: const Duration(milliseconds: 150),
-                  textStyle: GoogleFonts.rozhaOne(
-                    fontSize: 28,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black,
-                  )),
+              TyperAnimatedText(
+                'Adenilso ',
+                speed: const Duration(milliseconds: 150),
+                textStyle: GoogleFonts.rozhaOne(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black,
+                ),
+              ),
             ],
             isRepeatingAnimation: false,
             repeatForever: false,
