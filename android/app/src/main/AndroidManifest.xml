@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.wtn_project">
+    package="br.com.wtn_project.adenilso">
     <uses-permission android:name="android.permission.INTERNET" />
     <queries>
         <intent>
